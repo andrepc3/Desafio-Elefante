@@ -64,4 +64,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
     kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
+    // Lottie
+    def lottie_version = "3.7.0"
+    implementation "com.airbnb.android:lottie:$lottie_version"
+
 }
