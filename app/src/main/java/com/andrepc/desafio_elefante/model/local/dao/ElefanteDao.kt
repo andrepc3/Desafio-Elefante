@@ -1,22 +1,14 @@
-package com.andrepc.desafio_elefante.model.entity
+package com.andrepc.desafio_elefante.model.local.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.andrepc.desafio_elefante.model.entity.Elefante
 
 /**
- * Created by André Castro
+ * Create by André Castro
  */
 
-@Entity(tableName = "elefante")
-data class Elefante(
-
-    @ColumnInfo(name = "posicao")
-    var posicao: Int,
-
-    @ColumnInfo(name = "texto")
-    var texto: String
-)
-
+@Dao
 interface ElefanteDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

@@ -2,9 +2,9 @@ package com.andrepc.desafio_elefante.model.repo
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import com.andrepc.desafio_elefante.model.db.StepRoomDatabase
+import com.andrepc.desafio_elefante.model.local.db.StepRoomDatabase
 import com.andrepc.desafio_elefante.model.entity.Elefante
-import com.andrepc.desafio_elefante.model.entity.ElefanteDao
+import com.andrepc.desafio_elefante.model.local.dao.ElefanteDao
 
 /**
  * Created by André Castro
@@ -16,7 +16,7 @@ import com.andrepc.desafio_elefante.model.entity.ElefanteDao
  */
 class ElefanteRepository(application: Application) {
 
-    // Access to the data
+    // Access to the data from Room Database
     private val dao: ElefanteDao
 
     init {
@@ -25,23 +25,23 @@ class ElefanteRepository(application: Application) {
     }
 
     /**
-     * Add a 'Elefante' to the database
+     * Add a 'Elefante' to the Room Database
      */
-    suspend fun insertElefante(elefante: Elefante) {
+    suspend fun insertLocalElefante(elefante: Elefante) {
         dao.insert(elefante)
     }
 
     /**
      * Delete specific 'Elefante' from Room Database
      */
-    suspend fun deleteElefante(elefante: Elefante) {
+    suspend fun deleteLocalElefante(elefante: Elefante) {
         dao.delete(elefante)
     }
 
     /**
      * Retrieve the 'Elefante' from Room Database
      */
-    fun selectElefante(): LiveData<Elefante> {
+    fun getLocalElefante(): LiveData<Elefante> {
         return dao.select()
     }
 

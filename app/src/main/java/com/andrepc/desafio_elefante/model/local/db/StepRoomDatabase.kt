@@ -1,11 +1,11 @@
-package com.andrepc.desafio_elefante.model.db
+package com.andrepc.desafio_elefante.model.local.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.andrepc.desafio_elefante.model.entity.Elefante
-import com.andrepc.desafio_elefante.model.entity.ElefanteDao
+import com.andrepc.desafio_elefante.model.local.dao.ElefanteDao
 
 /**
  * Create by André Castro
