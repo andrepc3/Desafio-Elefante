@@ -32,20 +32,6 @@ class ElefanteRepository(application: Application) {
     }
 
     /**
-     * Delete specific "Elefante" from Room Database
-     */
-    suspend fun deleteLocalElefante(elefante: Elefante) {
-        dao.delete(elefante)
-    }
-
-    /**
-     *  Update the text of "Elefante" table on Room Database
-     */
-    suspend fun updateTextoElefante(texto: String, posicao: Int) {
-        dao.updateTexto(texto, posicao)
-    }
-
-    /**
      * Retrieve the "Elefante" from Room Database
      */
     fun getLocalElefante(): LiveData<List<Elefante>> {

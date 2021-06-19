@@ -3,6 +3,7 @@ package com.andrepc.desafio_elefante.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.andrepc.desafio_elefante.model.remote.response.Facts
 import com.andrepc.desafio_elefante.model.local.entity.Elefante
@@ -26,21 +27,20 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     var textStep4: String? = "4"
     var textStep5: String? = "5"
 
+    private val stepClickedPosition = MutableLiveData<Int>()
+
     private val elefanteRepository: ElefanteRepository = ElefanteRepository(application)
     private val expirationRepository: ExpirationRepository = ExpirationRepository(application)
     private val factsRepository: FactsRepository = FactsRepository()
     private val stepUtils: StepUtils = StepUtils()
 
-    fun insertElefante(elefante: Elefante) = viewModelScope.launch(Dispatchers.IO) {
-        elefanteRepository.insertLocalElefante(elefante)
-    }
-
-    fun deleteElefante(elefante: Elefante) = viewModelScope.launch(Dispatchers.IO) {
-        elefanteRepository.deleteLocalElefante(elefante)
-    }
-
-    fun updateTextoElefante(texto: String, posicao: Int) = viewModelScope.launch(Dispatchers.IO) {
-        elefanteRepository.updateTextoElefante(texto, posicao)
+    fun insertElefante(posicaoParam: Int, textoParam: String) = viewModelScope.launch(Dispatchers.IO) {
+        elefanteRepository.insertLocalElefante(
+            Elefante(
+                posicao = posicaoParam,
+                texto = textoParam
+            )
+        )
     }
 
     fun getElefante(): LiveData<List<Elefante>> {
@@ -56,7 +56,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         )
     }
 
-    fun getExpiration(): LiveData<List<Expiration>>{
+    fun getExpiration(): LiveData<List<Expiration>> {
         return expirationRepository.getExpiration()
     }
 
@@ -70,6 +70,14 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getCurrentDate(): String {
         return stepUtils.getCurrentDate()
+    }
+
+    fun setOnClickPosition(posicao: Int) {
+        stepClickedPosition.value = posicao
+    }
+
+    fun getClickedPosition(): LiveData<Int> {
+        return stepClickedPosition
     }
 
 }

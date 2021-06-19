@@ -1,6 +1,7 @@
 package com.andrepc.desafio_elefante.view
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -33,15 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         checkExpirationDate()
 
-        binding.imgStep1.setOnClickListener {
-            viewModel.getFacts().observe(this, { facts ->
-                println("text: " + facts[0].text)
-                println("text: " + facts[1].text)
-                println("text: " + facts[2].text)
-                println("text: " + facts[3].text)
-                println("text: " + facts[4].text)
-            })
-        }
+        onStepClick()
     }
 
     /**
@@ -51,10 +44,11 @@ class MainActivity : AppCompatActivity() {
         val isDateExpired = MutableLiveData<Boolean>()
 
         viewModel.getExpiration().observe(this, { listExpiration ->
-            println("indices** " + listExpiration.indices.toString())
+
+            viewModel.getExpiration().removeObservers(this)
+
             if (listExpiration.isNotEmpty()) {
                 for (i in listExpiration.indices) {
-                    println("getExpiration** " + listExpiration[i].date)
                     isDateExpired.value = isAfterCurrentDate(listExpiration[i].date)
                 }
             } else {
@@ -63,7 +57,6 @@ class MainActivity : AppCompatActivity() {
         })
 
         isDateExpired.observe(this, { value ->
-            println("isDateExpired** $value")
             if (value == true) {
                 updateTextoElefante()
             }
@@ -82,13 +75,12 @@ class MainActivity : AppCompatActivity() {
      */
     private fun updateTextoElefante() {
         viewModel.getFacts().observe(this, { listFacts ->
-            println("getFacts**")
             if (listFacts != null) {
                 for (i in listFacts.indices) {
                     val texto = listFacts[i].text
                     val posicao = i + 1
-                    viewModel.updateTextoElefante(texto, posicao)
-                    //updateExpirationDate()
+                    viewModel.insertElefante(posicao, texto)
+                    updateExpirationDate()
                 }
                 showToast("Api ok")
             } else {
@@ -104,6 +96,100 @@ class MainActivity : AppCompatActivity() {
         val currentDate = viewModel.getCurrentDate()
 
         viewModel.insertExpiration(currentDate)
+    }
+
+    /**
+     * Change the elephant position on step click and the visibility of the number
+     */
+    private fun onStepClick() {
+        viewModel.getClickedPosition().observe(this, { posicao ->
+            when (posicao) {
+                1 -> {
+                    binding.elefanteStep1.visibility = View.VISIBLE
+                    binding.elefanteStep2.visibility = View.INVISIBLE
+                    binding.elefanteStep3.visibility = View.INVISIBLE
+                    binding.elefanteStep4.visibility = View.INVISIBLE
+                    binding.elefanteStep5.visibility = View.INVISIBLE
+
+                    binding.numStep1.visibility = View.INVISIBLE
+                    binding.numStep2.visibility = View.VISIBLE
+                    binding.numStep3.visibility = View.VISIBLE
+                    binding.numStep4.visibility = View.VISIBLE
+                    binding.numStep5.visibility = View.VISIBLE
+
+                    getElefanteText(1)
+                }
+                2 -> {
+                    binding.elefanteStep1.visibility = View.INVISIBLE
+                    binding.elefanteStep2.visibility = View.VISIBLE
+                    binding.elefanteStep3.visibility = View.INVISIBLE
+                    binding.elefanteStep4.visibility = View.INVISIBLE
+                    binding.elefanteStep5.visibility = View.INVISIBLE
+
+                    binding.numStep1.visibility = View.VISIBLE
+                    binding.numStep2.visibility = View.INVISIBLE
+                    binding.numStep3.visibility = View.VISIBLE
+                    binding.numStep4.visibility = View.VISIBLE
+                    binding.numStep5.visibility = View.VISIBLE
+
+                    getElefanteText(2)
+                }
+                3 -> {
+                    binding.elefanteStep1.visibility = View.INVISIBLE
+                    binding.elefanteStep2.visibility = View.INVISIBLE
+                    binding.elefanteStep3.visibility = View.VISIBLE
+                    binding.elefanteStep4.visibility = View.INVISIBLE
+                    binding.elefanteStep5.visibility = View.INVISIBLE
+
+                    binding.numStep1.visibility = View.VISIBLE
+                    binding.numStep2.visibility = View.VISIBLE
+                    binding.numStep3.visibility = View.INVISIBLE
+                    binding.numStep4.visibility = View.VISIBLE
+                    binding.numStep5.visibility = View.VISIBLE
+
+                    getElefanteText(3)
+                }
+                4 -> {
+                    binding.elefanteStep1.visibility = View.INVISIBLE
+                    binding.elefanteStep2.visibility = View.INVISIBLE
+                    binding.elefanteStep3.visibility = View.INVISIBLE
+                    binding.elefanteStep4.visibility = View.VISIBLE
+                    binding.elefanteStep5.visibility = View.INVISIBLE
+
+                    binding.numStep1.visibility = View.VISIBLE
+                    binding.numStep2.visibility = View.VISIBLE
+                    binding.numStep3.visibility = View.VISIBLE
+                    binding.numStep4.visibility = View.INVISIBLE
+                    binding.numStep5.visibility = View.VISIBLE
+
+                    getElefanteText(4)
+                }
+                5 -> {
+                    binding.elefanteStep1.visibility = View.INVISIBLE
+                    binding.elefanteStep2.visibility = View.INVISIBLE
+                    binding.elefanteStep3.visibility = View.INVISIBLE
+                    binding.elefanteStep4.visibility = View.INVISIBLE
+                    binding.elefanteStep5.visibility = View.VISIBLE
+
+                    binding.numStep1.visibility = View.VISIBLE
+                    binding.numStep2.visibility = View.VISIBLE
+                    binding.numStep3.visibility = View.VISIBLE
+                    binding.numStep4.visibility = View.VISIBLE
+                    binding.numStep5.visibility = View.INVISIBLE
+
+                    getElefanteText(5)
+                }
+            }
+        })
+    }
+
+    /**
+     * Get "Elefante" from Room Database and show message by the step position
+     */
+    private fun getElefanteText(posicao: Int) {
+        viewModel.getElefante().observe(this, { listElefante ->
+            showToast(listElefante[posicao - 1].texto)
+        })
     }
 
     /**

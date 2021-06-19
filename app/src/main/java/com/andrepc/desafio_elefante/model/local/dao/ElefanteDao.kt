@@ -14,12 +14,6 @@ interface ElefanteDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(elefante: Elefante)
 
-    @Delete
-    suspend fun delete(elefante: Elefante)
-
-    @Query("UPDATE elefante SET texto = :texto WHERE posicao = :posicao")
-    suspend fun updateTexto(texto: String, posicao: Int)
-
     @Query("SELECT * FROM elefante")
     fun select(): LiveData<List<Elefante>>
 
