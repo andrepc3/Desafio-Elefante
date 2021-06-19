@@ -17,7 +17,6 @@ class StepUtils {
      */
     fun isAfterCurrentDate(storedDate: String): Boolean {
         val currentDate = simpleDateFormat.parse(getCurrentDate())
-        //return Date().after(simpleDateFormat.parse(storedDate))
         return currentDate.after(simpleDateFormat.parse(storedDate))
     }
 

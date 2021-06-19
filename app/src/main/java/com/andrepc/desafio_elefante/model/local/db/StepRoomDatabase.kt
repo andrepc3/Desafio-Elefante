@@ -4,24 +4,25 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.andrepc.desafio_elefante.model.local.entity.Elefante
-import com.andrepc.desafio_elefante.model.local.dao.ElefanteDao
-import com.andrepc.desafio_elefante.model.local.dao.ExpirationDao
-import com.andrepc.desafio_elefante.model.local.entity.Expiration
+import com.andrepc.desafio_elefante.model.local.entity.Step
+import com.andrepc.desafio_elefante.model.local.dao.StepDao
+import com.andrepc.desafio_elefante.model.local.dao.ElephantDao
+import com.andrepc.desafio_elefante.model.local.entity.Elephant
 
 /**
  * Create by André Castro
  */
+
 @Database(
     entities = [
-        Elefante::class,
-        Expiration::class
+        Step::class,
+        Elephant::class
     ], version = 1
 )
 abstract class StepRoomDatabase : RoomDatabase() {
 
-    abstract fun elefanteDao(): ElefanteDao
-    abstract fun expirationDao(): ExpirationDao
+    abstract fun stepDao(): StepDao
+    abstract fun elephantDao(): ElephantDao
 
     companion object {
         private var INSTANCE: StepRoomDatabase? = null

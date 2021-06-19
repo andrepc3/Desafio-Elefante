@@ -8,14 +8,14 @@ import androidx.room.PrimaryKey
  * Created by André Castro
  */
 
-@Entity(tableName = "expiration")
-data class Expiration(
+@Entity(tableName = "step")
+data class Step(
 
     @PrimaryKey
-    @ColumnInfo(name = "id")
-    var id: Int,
+    @ColumnInfo(name = "position")
+    var position: Int,
 
-    @ColumnInfo(name = "date")
-    var date: String
+    @ColumnInfo(name = "message")
+    var message: String,
 
 )

@@ -197,13 +197,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/row_4_col_1">
 
                 <ImageView
-                    android:id="@+id/elefante_step_5"
+                    android:id="@+id/elephant_step_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:elevation="3dp"
                     android:src="@drawable/ic_el"
-                    android:visibility="visible" />
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/num_step_5"
@@ -318,7 +318,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/row_6_col_2">
 
                 <ImageView
-                    android:id="@+id/elefante_step_4"
+                    android:id="@+id/elephant_step_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -439,7 +439,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/row_8_col_3">
 
                 <ImageView
-                    android:id="@+id/elefante_step_3"
+                    android:id="@+id/elephant_step_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -581,7 +581,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/row_11_col_2">
 
                 <ImageView
-                    android:id="@+id/elefante_step_2"
+                    android:id="@+id/elephant_step_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -702,13 +702,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/row_13_col_3">
 
                 <ImageView
-                    android:id="@+id/elefante_step_1"
+                    android:id="@+id/elephant_step_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:elevation="3dp"
                     android:src="@drawable/ic_el"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
 
                 <TextView
                     android:id="@+id/num_step_1"
