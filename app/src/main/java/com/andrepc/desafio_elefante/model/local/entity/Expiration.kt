@@ -4,19 +4,18 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-
 /**
  * Created by André Castro
  */
 
-@Entity(tableName = "elefante")
-data class Elefante(
+@Entity(tableName = "expiration")
+data class Expiration(
 
     @PrimaryKey
-    @ColumnInfo(name = "posicao")
-    var posicao: Int,
+    @ColumnInfo(name = "id")
+    var id: Int,
 
-    @ColumnInfo(name = "texto")
-    var texto: String,
+    @ColumnInfo(name = "date")
+    var date: String
 
 )

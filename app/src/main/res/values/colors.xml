@@ -12,6 +12,8 @@
 
     <color name="background">#000000</color>
 
+    <color name="step_number">#000000</color>
+
     <!-- Default -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

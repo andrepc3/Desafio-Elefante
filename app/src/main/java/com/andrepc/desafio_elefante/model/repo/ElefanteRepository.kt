@@ -3,16 +3,16 @@ package com.andrepc.desafio_elefante.model.repo
 import android.app.Application
 import androidx.lifecycle.LiveData
 import com.andrepc.desafio_elefante.model.local.db.StepRoomDatabase
-import com.andrepc.desafio_elefante.model.entity.Elefante
 import com.andrepc.desafio_elefante.model.local.dao.ElefanteDao
+import com.andrepc.desafio_elefante.model.local.entity.Elefante
 
 /**
  * Created by André Castro
  */
 
 /**
- * Repository class for keeping changes of the elephant position in the database
- * Also provides access to the data
+ * Repository class to keep changes of the elephant position in the database
+ * Also provides access to the data using LiveData
  */
 class ElefanteRepository(application: Application) {
 
@@ -25,23 +25,30 @@ class ElefanteRepository(application: Application) {
     }
 
     /**
-     * Add a 'Elefante' to the Room Database
+     * Add a "Elefante" to the Room Database
      */
     suspend fun insertLocalElefante(elefante: Elefante) {
         dao.insert(elefante)
     }
 
     /**
-     * Delete specific 'Elefante' from Room Database
+     * Delete specific "Elefante" from Room Database
      */
     suspend fun deleteLocalElefante(elefante: Elefante) {
         dao.delete(elefante)
     }
 
     /**
-     * Retrieve the 'Elefante' from Room Database
+     *  Update the text of "Elefante" table on Room Database
      */
-    fun getLocalElefante(): LiveData<Elefante> {
+    suspend fun updateTextoElefante(texto: String, posicao: Int) {
+        dao.updateTexto(texto, posicao)
+    }
+
+    /**
+     * Retrieve the "Elefante" from Room Database
+     */
+    fun getLocalElefante(): LiveData<List<Elefante>> {
         return dao.select()
     }
 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="toaster_text">20dp</dimen>
+    <dimen name="step_number">27dp</dimen>
+
+</resources>

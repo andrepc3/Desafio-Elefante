@@ -13,6 +13,9 @@ import kotlinx.coroutines.launch
  * Created by André Castro
  */
 
+/**
+ * Repository class to instance Retrofit and get Api request
+ */
 class FactsRepository() {
 
     private val retrofitClient = RetrofitClient.getRetrofitInstance()

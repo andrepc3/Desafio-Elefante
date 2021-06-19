@@ -2,10 +2,10 @@ package com.andrepc.desafio_elefante.model.local.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.andrepc.desafio_elefante.model.entity.Elefante
+import com.andrepc.desafio_elefante.model.local.entity.Elefante
 
 /**
- * Create by André Castro
+ * Created by André Castro
  */
 
 @Dao
@@ -17,7 +17,10 @@ interface ElefanteDao {
     @Delete
     suspend fun delete(elefante: Elefante)
 
+    @Query("UPDATE elefante SET texto = :texto WHERE posicao = :posicao")
+    suspend fun updateTexto(texto: String, posicao: Int)
+
     @Query("SELECT * FROM elefante")
-    fun select(): LiveData<Elefante>
+    fun select(): LiveData<List<Elefante>>
 
 }
