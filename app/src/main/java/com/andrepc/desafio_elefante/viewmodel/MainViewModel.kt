@@ -61,6 +61,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
      */
     fun insertElephant(positionParam: Int, dateParam: String) =
         viewModelScope.launch(Dispatchers.IO) {
+            println("insertElephant***")
             elephantRepository.insertElephant(
                 Elephant(
                     id = 1,

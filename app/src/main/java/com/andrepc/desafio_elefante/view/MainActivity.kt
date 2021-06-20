@@ -34,7 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         checkExpirationDate()
 
-        onStepClick()
+        onStepClick() // Click handler
+
     }
 
     /**
@@ -51,7 +52,8 @@ class MainActivity : AppCompatActivity() {
                 for (i in listElephant.indices) {
                     val position = listElephant[i]?.position
                     if (position != null) {
-                        changeElephantStepPosition(position) //Change the initial elephant position
+                        //Change the initial elephant position
+                        changeElephantStepPosition(position, false)
                     }
 
                     val date = listElephant[i]?.date
@@ -81,15 +83,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Add a first elephant to Room Databases
-     */
-    private fun insertElephant(){
-        val currentDate = viewModel.getCurrentDate()
-
-        viewModel.insertElephant(1, currentDate)
-    }
-
-    /**
      * Request Api and update the message of "Step"
      */
     private fun getStepMessage() {
@@ -109,6 +102,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Add a first elephant to Room Database
+     */
+    private fun insertElephant() {
+        val currentDate = viewModel.getCurrentDate()
+
+        viewModel.insertElephant(1, currentDate)
+    }
+
+    /**
      * Update the expiration date on Room Database with the current date
      */
     private fun updateElephantDate() {
@@ -118,26 +120,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Update the actual elephant position on Room Database
+     */
+    private fun updateElephantPosition(position: Int) {
+        viewModel.updateElephantPosition(position)
+    }
+
+    /**
      * Change the actual elephant position on step click
      */
     private fun onStepClick() {
         viewModel.getClickedPosition().observe(this, { position ->
             updateElephantPosition(position)
-            changeElephantStepPosition(position)
+            changeElephantStepPosition(position, true)
         })
     }
 
     /**
-     * Update the actual elephant position on Room Database
-     */
-    private fun updateElephantPosition(position: Int){
-        viewModel.updateElephantPosition(position)
-    }
-
-    /**
      * Change the elephant position on and the visibility of the number
+     * And define if the Toaster will be shown
      */
-    private fun changeElephantStepPosition(position: Int) {
+    private fun changeElephantStepPosition(position: Int, showMessage: Boolean) {
         when (position) {
             1 -> {
                 binding.elephantStep1.visibility = View.VISIBLE
@@ -152,7 +155,9 @@ class MainActivity : AppCompatActivity() {
                 binding.numStep4.visibility = View.VISIBLE
                 binding.numStep5.visibility = View.VISIBLE
 
-                getStepMessage(1)
+                if (showMessage) {
+                    getStepMessage(1)
+                }
             }
             2 -> {
                 binding.elephantStep1.visibility = View.INVISIBLE
@@ -167,7 +172,9 @@ class MainActivity : AppCompatActivity() {
                 binding.numStep4.visibility = View.VISIBLE
                 binding.numStep5.visibility = View.VISIBLE
 
-                getStepMessage(2)
+                if (showMessage) {
+                    getStepMessage(2)
+                }
             }
             3 -> {
                 binding.elephantStep1.visibility = View.INVISIBLE
@@ -182,7 +189,9 @@ class MainActivity : AppCompatActivity() {
                 binding.numStep4.visibility = View.VISIBLE
                 binding.numStep5.visibility = View.VISIBLE
 
-                getStepMessage(3)
+                if (showMessage) {
+                    getStepMessage(3)
+                }
             }
             4 -> {
                 binding.elephantStep1.visibility = View.INVISIBLE
@@ -197,7 +206,9 @@ class MainActivity : AppCompatActivity() {
                 binding.numStep4.visibility = View.INVISIBLE
                 binding.numStep5.visibility = View.VISIBLE
 
-                getStepMessage(4)
+                if (showMessage) {
+                    getStepMessage(4)
+                }
             }
             5 -> {
                 binding.elephantStep1.visibility = View.INVISIBLE
@@ -212,7 +223,9 @@ class MainActivity : AppCompatActivity() {
                 binding.numStep4.visibility = View.VISIBLE
                 binding.numStep5.visibility = View.INVISIBLE
 
-                getStepMessage(5)
+                if (showMessage) {
+                    getStepMessage(5)
+                }
             }
         }
     }
@@ -225,14 +238,26 @@ class MainActivity : AppCompatActivity() {
             if (listStep.isNotEmpty()) {
                 val message = listStep[position - 1]?.message
                 if (message != null) {
-                    showToast(message)
+                    showToasterFragment(message)
+                    //showToast(message)
                 }
             }
         })
     }
 
     /**
-     * Show Toaster with the param string
+     * Show Toaster Dialog Fragment with the param message
+     */
+    private fun showToasterFragment(message: String) {
+
+        println("show** $message")
+        val dialog = ToasterFragment.getFragmentInstance(message)
+
+        dialog.show(supportFragmentManager, "toasterFragmentDialog")
+    }
+
+    /**
+     * Show Toast with the param string
      */
     private fun showToast(string: String) {
         Toast.makeText(this, string, Toast.LENGTH_SHORT).show()
