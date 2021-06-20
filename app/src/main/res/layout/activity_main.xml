@@ -22,43 +22,61 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="1" />
+
             <!-- Row 1 -->
             <ImageView
                 android:id="@+id/row_1_col_1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_1_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/row_1_col_2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_rv"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_1_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_1_col_1"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/row_1_col_3"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_1_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_1_col_2"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/row_1_col_4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:scaleType="fitCenter"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_1_col_3"
                 app:layout_constraintTop_toTopOf="parent"
                 app:lottie_autoPlay="true"
@@ -68,60 +86,66 @@
             <!-- Row 2 -->
             <ImageView
                 android:id="@+id/row_2_col_1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_2_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/row_1_col_1" />
 
             <ImageView
                 android:id="@+id/row_2_col_2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_c4"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_2_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_2_col_1"
                 app:layout_constraintTop_toBottomOf="@+id/row_1_col_2" />
 
             <ImageView
                 android:id="@+id/row_2_col_3"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_c2"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_2_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_2_col_2"
                 app:layout_constraintTop_toBottomOf="@+id/row_1_col_3" />
 
             <ImageView
                 android:id="@+id/row_2_col_4"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_2_col_3"
                 app:layout_constraintTop_toBottomOf="@+id/row_1_col_4" />
 
             <!-- Row 3 -->
             <ImageView
                 android:id="@+id/row_3_col_1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_3_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/row_2_col_1" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/row_3_col_2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_3_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_3_col_1"
                 app:layout_constraintTop_toBottomOf="@+id/row_2_col_2"
@@ -131,83 +155,91 @@
 
             <ImageView
                 android:id="@+id/row_3_col_3"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_rv"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_3_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_3_col_2"
                 app:layout_constraintTop_toBottomOf="@+id/row_2_col_3" />
 
             <ImageView
                 android:id="@+id/row_3_col_4"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_3_col_3"
                 app:layout_constraintTop_toBottomOf="@+id/row_2_col_4" />
 
             <!-- Row 4 -->
             <ImageView
                 android:id="@+id/row_4_col_1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_c1"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_4_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/row_3_col_1" />
 
             <ImageView
                 android:id="@+id/row_4_col_2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_rh"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_4_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_4_col_1"
                 app:layout_constraintTop_toBottomOf="@+id/row_3_col_2" />
 
             <ImageView
                 android:id="@+id/row_4_col_3"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_c3"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_4_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_4_col_2"
                 app:layout_constraintTop_toBottomOf="@+id/row_3_col_3" />
 
             <ImageView
                 android:id="@+id/row_4_col_4"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_4_col_3"
                 app:layout_constraintTop_toBottomOf="@+id/row_3_col_4" />
 
             <!-- Row 5 -->
             <RelativeLayout
                 android:id="@+id/row_5_col_1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:gravity="center"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_5_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/row_4_col_1">
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/elephant_step_5"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_centerInParent="true"
                     android:elevation="3dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="centerCrop"
                     android:visibility="gone"
+                    app:layout_constraintDimensionRatio="1:1"
                     app:lottie_autoPlay="true"
                     app:lottie_loop="true"
                     app:lottie_rawRes="@raw/elefante" />
@@ -224,30 +256,33 @@
 
                 <ImageView
                     android:id="@+id/img_step_5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:elevation="1dp"
                     android:onClick="@{()-> viewModel.setOnClickPosition(5)}"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_sv" />
+                    android:src="@drawable/ic_sv"
+                    app:layout_constraintDimensionRatio="1:1" />
 
             </RelativeLayout>
 
             <ImageView
                 android:id="@+id/row_5_col_2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_5_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_5_col_1"
                 app:layout_constraintTop_toBottomOf="@+id/row_4_col_2" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/row_5_col_3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_5_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_5_col_2"
                 app:layout_constraintTop_toBottomOf="@+id/row_4_col_3"
@@ -257,10 +292,11 @@
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/row_5_col_4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:scaleType="fitCenter"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_5_col_3"
                 app:layout_constraintTop_toBottomOf="@+id/row_4_col_4"
                 app:lottie_autoPlay="true"
@@ -270,29 +306,32 @@
             <!-- Row 6 -->
             <ImageView
                 android:id="@+id/row_6_col_1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_c4"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_6_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/row_5_col_1" />
 
             <ImageView
                 android:id="@+id/row_6_col_2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_c2"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_6_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_6_col_1"
                 app:layout_constraintTop_toBottomOf="@+id/row_5_col_2" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/row_6_col_3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_6_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_6_col_2"
                 app:layout_constraintTop_toBottomOf="@+id/row_5_col_3"
@@ -302,10 +341,11 @@
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/row_6_col_4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:scaleType="fitCenter"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_6_col_3"
                 app:layout_constraintTop_toBottomOf="@+id/row_5_col_4"
                 app:lottie_autoPlay="true"
@@ -315,27 +355,29 @@
             <!-- Row 7 -->
             <ImageView
                 android:id="@+id/row_7_col_1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_7_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/row_6_col_1" />
 
             <RelativeLayout
                 android:id="@+id/row_7_col_2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:gravity="center"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_7_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_7_col_1"
                 app:layout_constraintTop_toBottomOf="@+id/row_6_col_2">
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/elephant_step_4"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_centerInParent="true"
                     android:elevation="3dp"
                     android:scaleType="fitCenter"
@@ -356,8 +398,8 @@
 
                 <ImageView
                     android:id="@+id/img_step_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:elevation="1dp"
                     android:onClick="@{()-> viewModel.setOnClickPosition(4)}"
                     android:scaleType="centerCrop"
@@ -367,32 +409,35 @@
 
             <ImageView
                 android:id="@+id/row_7_col_3"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_7_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_7_col_2"
                 app:layout_constraintTop_toBottomOf="@+id/row_6_col_3" />
 
             <ImageView
                 android:id="@+id/row_7_col_4"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_7_col_3"
                 app:layout_constraintTop_toBottomOf="@+id/row_6_col_4" />
 
             <!-- Row 8 -->
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/row_8_col_1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_8_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/row_7_col_1"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
@@ -400,68 +445,74 @@
 
             <ImageView
                 android:id="@+id/row_8_col_2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_rv"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_8_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_8_col_1"
                 app:layout_constraintTop_toBottomOf="@+id/row_7_col_2" />
 
             <ImageView
                 android:id="@+id/row_8_col_3"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_8_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_8_col_2"
                 app:layout_constraintTop_toBottomOf="@+id/row_7_col_3" />
 
             <ImageView
                 android:id="@+id/row_8_col_4"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_8_col_3"
                 app:layout_constraintTop_toBottomOf="@+id/row_7_col_4" />
 
             <!-- Row 9 -->
             <ImageView
                 android:id="@+id/row_9_col_1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_9_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/row_8_col_1" />
 
             <ImageView
                 android:id="@+id/row_9_col_2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_c4"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_9_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_9_col_1"
                 app:layout_constraintTop_toBottomOf="@+id/row_8_col_2" />
 
             <RelativeLayout
                 android:id="@+id/row_9_col_3"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:gravity="center"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_9_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_9_col_2"
                 app:layout_constraintTop_toBottomOf="@+id/row_8_col_3">
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/elephant_step_3"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_centerInParent="true"
                     android:elevation="3dp"
                     android:scaleType="fitCenter"
@@ -482,8 +533,8 @@
 
                 <ImageView
                     android:id="@+id/img_step_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:elevation="1dp"
                     android:onClick="@{()-> viewModel.setOnClickPosition(3)}"
                     android:scaleType="centerCrop"
@@ -493,40 +544,44 @@
 
             <ImageView
                 android:id="@+id/row_9_col_4"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_c2"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_9_col_3"
                 app:layout_constraintTop_toBottomOf="@+id/row_8_col_4" />
 
             <!-- Row 10 -->
             <ImageView
                 android:id="@+id/row_10_col_1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_10_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/row_9_col_1" />
 
             <ImageView
                 android:id="@+id/row_10_col_2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_10_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_10_col_1"
                 app:layout_constraintTop_toBottomOf="@+id/row_9_col_2" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/row_10_col_3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_10_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_10_col_2"
                 app:layout_constraintTop_toBottomOf="@+id/row_9_col_3"
@@ -536,79 +591,86 @@
 
             <ImageView
                 android:id="@+id/row_10_col_4"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_rv"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_10_col_3"
                 app:layout_constraintTop_toBottomOf="@+id/row_9_col_4" />
 
             <!-- Row 11 -->
             <ImageView
                 android:id="@+id/row_11_col_1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_11_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/row_10_col_1" />
 
             <ImageView
                 android:id="@+id/row_11_col_2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_c1"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_11_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_11_col_1"
                 app:layout_constraintTop_toBottomOf="@+id/row_10_col_2" />
 
             <ImageView
                 android:id="@+id/row_11_col_3"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_rh"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_11_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_11_col_2"
                 app:layout_constraintTop_toBottomOf="@+id/row_10_col_3" />
 
             <ImageView
                 android:id="@+id/row_11_col_4"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_c3"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_11_col_3"
                 app:layout_constraintTop_toBottomOf="@+id/row_10_col_4" />
 
             <!-- Row 12 -->
             <ImageView
                 android:id="@+id/row_12_col_1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_12_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/row_11_col_1" />
 
             <RelativeLayout
                 android:id="@+id/row_12_col_2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:gravity="center"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_12_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_12_col_1"
                 app:layout_constraintTop_toBottomOf="@+id/row_11_col_2">
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/elephant_step_2"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_centerInParent="true"
                     android:elevation="3dp"
                     android:scaleType="fitCenter"
@@ -629,8 +691,8 @@
 
                 <ImageView
                     android:id="@+id/img_step_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:elevation="1dp"
                     android:onClick="@{()-> viewModel.setOnClickPosition(2)}"
                     android:scaleType="centerCrop"
@@ -640,20 +702,22 @@
 
             <ImageView
                 android:id="@+id/row_12_col_3"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_12_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_12_col_2"
                 app:layout_constraintTop_toBottomOf="@+id/row_11_col_3" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/row_12_col_4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:scaleType="fitCenter"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_12_col_3"
                 app:layout_constraintTop_toBottomOf="@+id/row_11_col_4"
                 app:lottie_autoPlay="true"
@@ -663,78 +727,85 @@
             <!-- Row 13 -->
             <ImageView
                 android:id="@+id/row_13_col_1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_13_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/row_12_col_1" />
 
             <ImageView
                 android:id="@+id/row_13_col_2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_c4"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_13_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_13_col_1"
                 app:layout_constraintTop_toBottomOf="@+id/row_12_col_2" />
 
             <ImageView
                 android:id="@+id/row_13_col_3"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_c2"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_13_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_13_col_2"
                 app:layout_constraintTop_toBottomOf="@+id/row_12_col_3" />
 
             <ImageView
                 android:id="@+id/row_13_col_4"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_13_col_3"
                 app:layout_constraintTop_toBottomOf="@+id/row_12_col_4" />
 
             <!-- Row 14 -->
             <ImageView
                 android:id="@+id/row_14_col_1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_14_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/row_13_col_1" />
 
             <ImageView
                 android:id="@+id/row_14_col_2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_14_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_14_col_1"
                 app:layout_constraintTop_toBottomOf="@+id/row_13_col_2" />
 
             <RelativeLayout
                 android:id="@+id/row_14_col_3"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:gravity="center"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_14_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_14_col_2"
                 app:layout_constraintTop_toBottomOf="@+id/row_13_col_3">
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/elephant_step_1"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_centerInParent="true"
                     android:elevation="3dp"
                     android:scaleType="fitCenter"
@@ -755,8 +826,8 @@
 
                 <ImageView
                     android:id="@+id/img_step_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:elevation="1dp"
                     android:onClick="@{()-> viewModel.setOnClickPosition(1)}"
                     android:scaleType="centerCrop"
@@ -766,22 +837,24 @@
 
             <ImageView
                 android:id="@+id/row_14_col_4"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_14_col_3"
                 app:layout_constraintTop_toBottomOf="@+id/row_13_col_4" />
 
             <!-- Row 15 -->
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/row_15_col_1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_15_col_2"
-                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_start"
                 app:layout_constraintTop_toBottomOf="@+id/row_14_col_1"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
@@ -789,31 +862,34 @@
 
             <ImageView
                 android:id="@+id/row_15_col_2"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_15_col_3"
                 app:layout_constraintStart_toEndOf="@+id/row_15_col_1"
                 app:layout_constraintTop_toBottomOf="@+id/row_14_col_2" />
 
             <ImageView
                 android:id="@+id/row_15_col_3"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_rv"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/row_15_col_4"
                 app:layout_constraintStart_toEndOf="@+id/row_15_col_2"
                 app:layout_constraintTop_toBottomOf="@+id/row_14_col_3" />
 
             <ImageView
                 android:id="@+id/row_15_col_4"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_gr"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline_end"
                 app:layout_constraintStart_toEndOf="@+id/row_15_col_3"
                 app:layout_constraintTop_toBottomOf="@+id/row_14_col_4" />
 
