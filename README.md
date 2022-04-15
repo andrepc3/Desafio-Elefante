@@ -1,5 +1,5 @@
 # Desafio-Elefante
-Teste prático de desenvolvimento mobile, utilizando Android Jetpack, proposto pela Lojong.
+Teste prático de desenvolvimento mobile, utilizando Android Jetpack.
 
 <br>
 
